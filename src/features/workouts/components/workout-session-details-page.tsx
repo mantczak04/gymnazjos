@@ -35,6 +35,7 @@ import type {
   SessionExerciseDetails
 } from "../types/workout.types";
 import { SetupAlert } from "./setup-alert";
+import { WorkoutNav } from "./workout-nav";
 
 function SavedSetEditor({
   set,
@@ -214,6 +215,7 @@ export function WorkoutSessionDetailsPage({ sessionId }: { sessionId: string }) 
         </Button>
       }
     >
+      <WorkoutNav />
       <SetupAlert />
 
       {sessionQuery.isLoading ? <p className="text-sm text-muted-foreground">Loading workout...</p> : null}

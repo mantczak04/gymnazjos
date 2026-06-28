@@ -13,6 +13,7 @@ import { formatLoggingType } from "@/shared/utils/format";
 import { useActiveWorkoutDraft } from "../hooks/use-active-workout-draft";
 import { getTemplateWithExercises, listActiveTemplatesWithExercises } from "../queries/templates";
 import { SetupAlert } from "./setup-alert";
+import { WorkoutNav } from "./workout-nav";
 
 export function StartWorkoutPage() {
   const router = useRouter();
@@ -41,6 +42,7 @@ export function StartWorkoutPage() {
 
   return (
     <PageShell title="Start workout">
+      <WorkoutNav />
       <SetupAlert />
 
       <div className="grid gap-3 sm:grid-cols-3">

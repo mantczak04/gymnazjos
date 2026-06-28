@@ -10,6 +10,7 @@ import { Button } from "@/shared/components/ui/button";
 import { formatDateTime, formatDuration, formatFeeling } from "@/shared/utils/format";
 import { listCompletedSessions } from "../queries/sessions";
 import { SetupAlert } from "./setup-alert";
+import { WorkoutNav } from "./workout-nav";
 
 export function WorkoutHistoryPage() {
   const configured = isSupabaseConfigured();
@@ -21,6 +22,7 @@ export function WorkoutHistoryPage() {
 
   return (
     <PageShell title="Workout history">
+      <WorkoutNav />
       <SetupAlert />
 
       {sessionsQuery.isLoading ? <p className="text-sm text-muted-foreground">Loading history...</p> : null}

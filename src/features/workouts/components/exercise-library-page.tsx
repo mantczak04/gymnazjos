@@ -22,6 +22,7 @@ import {
   updateExercise
 } from "../queries/exercises";
 import { SetupAlert } from "./setup-alert";
+import { WorkoutNav } from "./workout-nav";
 
 function ExerciseEditRow({ exercise }: { exercise: Exercise }) {
   const queryClient = useQueryClient();
@@ -140,6 +141,7 @@ export function ExerciseLibraryPage() {
 
   return (
     <PageShell title="Exercise library">
+      <WorkoutNav />
       <SetupAlert />
 
       <form

@@ -26,6 +26,7 @@ import {
 import { templateFormSchema, type TemplateFormValues } from "../schemas/template.schema";
 import type { WorkoutTemplate } from "../types/workout.types";
 import { SetupAlert } from "./setup-alert";
+import { WorkoutNav } from "./workout-nav";
 
 function TemplateItem({ template }: { template: WorkoutTemplate }) {
   const queryClient = useQueryClient();
@@ -243,6 +244,7 @@ export function WorkoutTemplatesPage() {
 
   return (
     <PageShell title="Workout templates">
+      <WorkoutNav />
       <SetupAlert />
 
       <form

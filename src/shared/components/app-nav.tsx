@@ -2,15 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Dumbbell, History, Home, Library, Rows3 } from "lucide-react";
+import { Dumbbell, Utensils } from "lucide-react";
 import { cn } from "@/shared/utils/cn";
 
 const items = [
-  { href: "/workouts", label: "Start", icon: Home },
-  { href: "/workouts/active", label: "Active", icon: Dumbbell },
-  { href: "/workouts/history", label: "History", icon: History },
-  { href: "/workouts/exercises", label: "Exercises", icon: Library },
-  { href: "/workouts/templates", label: "Templates", icon: Rows3 }
+  { href: "/workouts", label: "Workouts", icon: Dumbbell },
+  { href: "/nutrition", label: "Nutrition", icon: Utensils }
 ];
 
 export function AppNav() {
@@ -27,7 +24,7 @@ export function AppNav() {
             {items.map((item) => {
               const active =
                 pathname === item.href ||
-                (item.href !== "/workouts" && pathname.startsWith(item.href));
+                pathname.startsWith(`${item.href}/`);
               const Icon = item.icon;
 
               return (
@@ -47,10 +44,9 @@ export function AppNav() {
           </nav>
         </div>
       </header>
-      <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-5 border-t border-border bg-background md:hidden">
+      <nav className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-border bg-background md:hidden">
         {items.map((item) => {
-          const active =
-            pathname === item.href || (item.href !== "/workouts" && pathname.startsWith(item.href));
+          const active = pathname === item.href || pathname.startsWith(`${item.href}/`);
           const Icon = item.icon;
 
           return (

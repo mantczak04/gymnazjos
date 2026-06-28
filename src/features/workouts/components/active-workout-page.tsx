@@ -20,6 +20,7 @@ import { listActiveExercises } from "../queries/exercises";
 import { finishWorkout, getLastPerformedSetsByExerciseIds } from "../queries/sessions";
 import { hasAtLeastOneValidSet } from "../utils/volume";
 import { SetupAlert } from "./setup-alert";
+import { WorkoutNav } from "./workout-nav";
 
 function numberOrNull(value: string) {
   if (value.trim() === "") {
@@ -84,6 +85,7 @@ export function ActiveWorkoutPage() {
   if (!draft) {
     return (
       <PageShell title="Active workout">
+        <WorkoutNav />
         <div className="rounded-lg border border-border bg-card p-4">
           <p className="mb-3 text-sm text-muted-foreground">No active workout draft.</p>
           <Button asChild>
@@ -104,6 +106,7 @@ export function ActiveWorkoutPage() {
       title={draft.templateName}
       actions={<Badge>Started {formatTime(draft.startedAt)}</Badge>}
     >
+      <WorkoutNav />
       <SetupAlert />
 
       <div className="grid gap-4">
