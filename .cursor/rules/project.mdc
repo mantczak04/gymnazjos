@@ -1,0 +1,18 @@
+---
+description: Project conventions for Gymnazjos
+globs:
+  - "**/*"
+alwaysApply: true
+---
+
+- Use strict TypeScript.
+- Keep workout code inside `src/features/workouts`.
+- Use feature query modules for Supabase operations.
+- Use Zod for validation.
+- Do not introduce dependencies without a clear reason.
+- Update docs and migrations for schema or product changes.
+- Run `pnpm typecheck`, `pnpm lint`, `pnpm test`, and `pnpm build` before considering work complete.
+- For documentation and more information about project see `.ai/docs`
+- Before editing code, read and apply every `AGENTS.md` from the repository root down to each directory being changed.
+- More specific nested `AGENTS.md` files override broader instructions for their subtree.
+- If a change touches multiple subtrees, follow the local `AGENTS.md` for each subtree.
